@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080908">
+<meta name="description" content="Uglyxcy — веб-разработка и дизайн цифровых продуктов.">
+<title>Uglyxcy — сайты, которые живут</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080908;--panel:#10120f;--text:#f4f5f1;--muted:#a3a79e;--line:rgba(244,245,241,.13);--green:#8df34d;--green2:#b4ff7d;--display:"Manrope";--body:"Manrope";--mono:"DM Mono";--ease:cubic-bezier(.2,.75,.25,1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body),sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}a{color:inherit;text-decoration:none}button,a{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:4px}.container{width:min(1280px,calc(100% - 104px));margin:auto}.topbar{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:relative;z-index:4}.brand{display:flex;align-items:center;gap:12px;font-size:19px;font-weight:800;letter-spacing:-.06em}.spark{width:13px;height:13px;background:var(--green);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);filter:drop-shadow(0 0 9px #8df34d99)}.nav{display:flex;gap:38px;color:#c2c5be;font-size:12px}.nav a,.footlinks a{transition:color .2s}.nav a:hover,.footlinks a:hover{color:var(--green)}.telegram{border:1px solid var(--line);border-radius:30px;padding:12px 18px;font-size:12px;transition:background .2s,border-color .2s,color .2s}.telegram:hover{background:var(--green);color:#0a0c08;border-color:var(--green)}
+.hero{min-height:650px;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;isolation:isolate;padding:60px 0 50px}.hero-copy{position:relative;z-index:2}.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid #8df34d88;border-radius:30px;padding:7px 13px;color:var(--green);font-size:12px;font-weight:700;margin-bottom:24px}.pill:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}h1{font-size:clamp(54px,7vw,94px);line-height:.96;letter-spacing:-.075em;font-weight:800;margin:0;max-width:750px}h1 span,.green{color:var(--green)}.hero-sub{font-size:17px;line-height:1.55;color:#b6bab2;max-width:430px;margin:22px 0 28px}.hero-actions{display:flex;align-items:center;gap:25px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:13px;padding:16px 24px;background:var(--green);color:#0b1008;border-radius:30px;font-size:13px;font-weight:800;transition:transform .22s var(--ease),background .22s,box-shadow .22s}.btn:hover{transform:translateY(-3px);background:var(--green2);box-shadow:0 10px 30px #8df34d24}.btn:active{transform:scale(.98)}.quiet-link{font-size:12px;color:#d6d9d2;border-bottom:1px solid #777d72;padding-bottom:6px;transition:color .2s,border-color .2s}.quiet-link:hover{color:var(--green);border-color:var(--green)}.hero-visual{position:absolute;z-index:-1;right:-4%;top:0;width:58%;height:100%;display:grid;place-items:center;overflow:visible}.particle-sphere{width:min(510px,88%);aspect-ratio:1;position:relative;filter:drop-shadow(0 0 28px #8df34d22)}.particle-sphere canvas{display:block;width:100%;height:100%}.hero-glow{position:absolute;right:0;top:20%;width:520px;height:440px;background:radial-gradient(ellipse,#8df34d13,transparent 68%);z-index:-2;pointer-events:none}.particle-sphere:after{content:"";position:absolute;inset:18%;border-radius:50%;background:radial-gradient(circle,#8df34d12,transparent 68%);pointer-events:none}.hero-glow{position:absolute;right:0;top:20%;width:520px;height:440px;background:radial-gradient(ellipse,#8df34d13,transparent 68%);z-index:-2;pointer-events:none}.hero-note{position:absolute;right:2%;bottom:12%;font:9px var(--mono);color:#858b80;letter-spacing:.12em}.trust{display:grid;grid-template-columns:1.5fr repeat(3,1fr) 1.2fr;align-items:center;border:1px solid var(--line);border-radius:24px;padding:22px 30px;margin:0 auto 18px;background:linear-gradient(100deg,#111310dd,#0b0d0bdd)}.trust-intro strong{font-size:18px;display:block}.trust-intro span,.metric span{font-size:11px;color:var(--muted)}.metric{padding:0 25px;border-left:1px solid var(--line)}.metric strong{font-size:22px;display:block;letter-spacing:-.04em}.social-proof{font-size:10px;line-height:1.4;color:var(--muted);padding-left:18px;border-left:1px solid var(--line)}.avatars{display:flex;margin-bottom:7px}.avatar{width:25px;height:25px;border-radius:50%;border:2px solid var(--bg);margin-left:-6px;background:linear-gradient(145deg,#8b9385,#30362c)}.avatar:first-child{margin-left:0}.section{padding:94px 0;border-bottom:1px solid var(--line)}.work{padding-top:12px}.work-grid{display:grid;grid-template-columns:.82fr 1fr 1fr;gap:16px;align-items:stretch}.work-intro{padding:10px 22px 12px 0;display:flex;flex-direction:column;align-items:flex-start}.section-tag{display:inline-flex;border:1px solid #8df34d88;border-radius:30px;padding:6px 11px;color:var(--green);font-size:11px;margin-bottom:17px}.work-intro h2,.about h2,.reviews h2{font-size:clamp(34px,3.5vw,49px);line-height:1.02;letter-spacing:-.065em;margin:0 0 15px}.work-intro p,.about p{font-size:13px;line-height:1.7;color:var(--muted);max-width:280px;margin:0 0 22px}.outline-btn{border:1px solid #777d72;border-radius:30px;padding:11px 17px;font-size:11px;transition:all .2s}.outline-btn:hover{border-color:var(--green);color:var(--green)}.project{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#111310;transition:transform .25s var(--ease),border-color .25s}.project:hover{transform:translateY(-5px);border-color:#8df34d80}.project-art{height:220px;position:relative;overflow:hidden;background:#151714}.project-art.mountain{background:linear-gradient(160deg,#151716,#353936 55%,#080908)}.mountain:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 28%,#b8bdb2 29%,transparent 30%),linear-gradient(145deg,transparent 38%,#747b70 39%,#20241f 62%,transparent 63%);clip-path:polygon(0 100%,0 65%,27% 38%,43% 62%,66% 18%,100% 72%,100% 100%);opacity:.75}.mountain:after{content:"Build\\A Something\\A Great.";white-space:pre;position:absolute;left:13%;top:22%;font-size:clamp(22px,2.4vw,34px);font-weight:700;line-height:1.04;letter-spacing:-.06em;color:#e8eae5;text-shadow:0 2px 12px #000}.art-label{position:absolute;right:14px;top:13px;border:1px solid #ffffff25;background:#080908aa;border-radius:30px;padding:6px 10px;font-size:10px;color:#dce1d8;z-index:2}.phone-art{background:radial-gradient(ellipse at 48% 75%,#4634a6 0,transparent 52%),linear-gradient(145deg,#090912,#17132b)}.phone{position:absolute;width:130px;height:235px;right:22%;top:14px;border:5px solid #34333d;border-radius:25px;background:linear-gradient(150deg,#101019,#07070d);transform:rotate(-13deg);box-shadow:0 10px 30px #0009}.phone:before{content:"";position:absolute;top:8px;left:38%;width:24%;height:5px;border-radius:5px;background:#393944}.phone:after{content:"Better\\A Together.";white-space:pre;position:absolute;top:40%;left:15%;font-size:17px;line-height:1.05;font-weight:700;letter-spacing:-.05em}.project-info{padding:15px 17px 17px;display:flex;justify-content:space-between;align-items:center}.project-info strong{font-size:13px;display:block}.project-info span{font-size:10px;line-height:1.45;color:var(--muted);display:block;max-width:220px;margin-top:4px}.project-arrow{font-size:22px;color:#b7bdb1}.about-process{display:grid;grid-template-columns:.78fr 1.22fr;border:1px solid var(--line);border-radius:22px;padding:30px 36px;margin-top:18px}.about{padding-right:38px;border-right:1px solid var(--line);position:relative}.about p{max-width:340px}.signature{font-family:cursive;font-size:27px;color:#b6bdb0;transform:rotate(-8deg);display:block;text-align:right;padding-right:10px}.process-area{padding-left:48px}.process-area h3{font-size:25px;line-height:1.1;letter-spacing:-.05em;margin:0 0 27px}.steps{display:grid;grid-template-columns:1fr 30px 1fr 30px 1fr;align-items:center;gap:10px}.step{text-align:center}.step-icon{width:52px;height:52px;border:1px solid var(--line);border-radius:15px;display:grid;place-items:center;margin:0 auto 12px;font-size:21px;color:#e5e9e0}.step b{font-size:11px;display:block}.step small{font:10px var(--mono);color:var(--green);display:block;margin-bottom:9px}.step-arrow{text-align:center;color:#858b80;font-size:20px}.reviews{display:grid;grid-template-columns:.7fr 1.3fr;gap:30px;align-items:center;padding:22px 0}.review-card{border:1px solid var(--line);border-radius:17px;padding:25px 30px;background:linear-gradient(110deg,#151714,#0d0f0d);position:relative;overflow:hidden}.review-card:after{content:"";position:absolute;right:-40px;bottom:-100px;width:240px;height:180px;background:radial-gradient(ellipse,#8df34d18,transparent 70%)}.quote{font-size:30px;color:var(--green);line-height:.8}.review-card blockquote{font-size:14px;line-height:1.65;color:#d4d8d0;margin:8px 0 18px;max-width:640px}.review-author{font-size:11px;color:var(--muted)}.review-note{font:9px var(--mono);color:#73796f;margin-top:12px}.final-cta{margin:0 0 0;border:1px solid var(--line);border-radius:24px;padding:30px 46px;display:flex;justify-content:space-between;align-items:center;gap:25px;background:radial-gradient(ellipse at 88% 90%,#8df34d16,transparent 38%),#10120f}.final-cta h2{font-size:clamp(28px,3.4vw,42px);line-height:1.04;letter-spacing:-.06em;margin:0 0 8px}.final-cta p{font-size:12px;color:var(--muted);margin:0}.footer{padding:26px 0 34px;display:flex;justify-content:space-between;align-items:center;color:#81877d;font-size:10px}.footlinks{display:flex;gap:24px}.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease),transform .6s var(--ease)}.reveal.visible{opacity:1;transform:none}.hero .pill,.hero h1,.hero-sub,.hero-actions{animation:enter .65s var(--ease) both}.hero h1{animation-delay:60ms}.hero-sub{animation-delay:120ms}.hero-actions{animation-delay:180ms}@keyframes enter{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:none}}
+@media(max-width:1000px){.container{width:calc(100% - 64px)}.hero{min-height:590px}.trust{grid-template-columns:1.3fr repeat(3,1fr);padding:20px}.social-proof{display:none}.metric{padding:0 16px}.work-grid{grid-template-columns:.75fr 1fr 1fr}.project-art{height:185px}.about-process{padding:25px}.process-area{padding-left:30px}}
+@media(max-width:767px){.container{width:calc(100% - 40px)}.topbar{height:68px}.nav{display:none}.brand{font-size:17px}.telegram{padding:10px 13px;font-size:11px}.hero{min-height:680px;display:flex;align-items:flex-end;padding:40px 0 38px}.hero-visual{width:100%;height:58%;right:-14%;top:0;opacity:.8}.particle-sphere{width:min(390px,88%)}.hero-glow{top:5%;right:-30%;width:400px}.hero-note{right:7%;bottom:8%;font-size:8px}h1{font-size:clamp(50px,12.4vw,76px)}.hero-sub{font-size:14px;max-width:340px;margin:18px 0 22px}.hero-actions{gap:18px}.btn{padding:14px 18px;font-size:12px}.trust{grid-template-columns:1fr 1fr;gap:17px 0;border-radius:17px;padding:18px;margin-top:0}.trust-intro{grid-column:1/-1;padding-bottom:13px;border-bottom:1px solid var(--line)}.metric{padding:0 12px}.metric:nth-child(2){border-left:0;padding-left:0}.metric strong{font-size:19px}.metric span{font-size:10px}.section{padding:70px 0}.work{padding-top:12px}.work-grid{grid-template-columns:1fr;gap:13px}.work-intro{padding:8px 0 15px}.work-intro h2,.about h2,.reviews h2{font-size:38px}.work-intro p{max-width:350px}.project-art{height:220px}.about-process{grid-template-columns:1fr;padding:23px 20px;border-radius:17px}.about{padding:0 0 25px;border-right:0;border-bottom:1px solid var(--line)}.process-area{padding:25px 0 0}.process-area h3{font-size:23px;margin-bottom:23px}.steps{gap:4px;grid-template-columns:1fr 18px 1fr 18px 1fr}.step-icon{width:43px;height:43px;border-radius:13px;font-size:18px}.step b{font-size:10px}.step-arrow{font-size:15px}.reviews{grid-template-columns:1fr;gap:15px;padding:0}.reviews h2{margin-bottom:0}.review-card{padding:21px}.review-card blockquote{font-size:13px}.final-cta{display:block;padding:25px 22px;border-radius:18px}.final-cta h2{font-size:32px}.final-cta .btn{margin-top:20px}.footer{gap:15px;flex-wrap:wrap}.footlinks{gap:15px}.footer>span{order:3;width:100%}}
+.hero-visual{z-index:1;pointer-events:auto}.particle-sphere{cursor:crosshair;touch-action:none}.project[role=button]{cursor:pointer}.project[role=button]:focus-visible{outline:2px solid var(--green);outline-offset:4px}.project{border:1px solid #ffffff18;border-radius:22px;background:linear-gradient(155deg,#151914,#0d0f0d 72%);box-shadow:0 14px 42px #0004;transition:transform .3s var(--ease),border-color .3s,box-shadow .3s}.project:hover{transform:translateY(-8px);border-color:#a9fa7566;box-shadow:0 24px 55px #0008,0 0 34px #8df34d0b}.project-art{height:248px;margin:8px;border-radius:16px;overflow:hidden}.project-art.mountain{background:radial-gradient(ellipse at 76% 25%,#8df34d32,transparent 34%),linear-gradient(145deg,#17201a,#0c110e 72%)}.mountain:before{background:linear-gradient(130deg,transparent 27%,#8fa18c 28%,#344237 31%,transparent 32%),linear-gradient(145deg,transparent 39%,#c2d0bc 40%,#566b59 44%,#202d23 67%,transparent 68%),linear-gradient(35deg,transparent 58%,#667a67 59%,transparent 61%);clip-path:polygon(0 100%,0 67%,22% 43%,37% 65%,64% 22%,100% 70%,100% 100%);opacity:.66}.mountain:after{content:"NOVA\\A DIGITAL STUDIO";left:9%;top:12%;font:500 10px var(--mono);letter-spacing:.18em;line-height:1.6;color:#e9f1e6;text-shadow:0 2px 20px #000}.phone-art{background:radial-gradient(ellipse at 52% 100%,#7661ff75,transparent 55%),linear-gradient(145deg,#101324,#1b1730)}.phone{width:72%;height:82%;right:14%;top:9%;border:1px solid #ffffff30;border-radius:18px;background:linear-gradient(150deg,#191c2a,#11131b);transform:rotate(-3deg);box-shadow:0 16px 35px #0008,0 0 25px #8d7bff22}.phone:before{content:"FLOW  /  TODAY";top:15px;left:15px;width:auto;height:auto;border-radius:0;background:transparent;color:#d9d7ff;font:500 9px var(--mono);letter-spacing:.13em}.phone:after{content:"Your focus\\A\\A  ✓  Plan the week\\A  ✓  Design review\\A  ○  Build prototype";top:31%;left:15px;right:8px;font:500 11px/2 var(--body),sans-serif;letter-spacing:0;color:#e5e7f1;white-space:pre;filter:none}.project-info{padding:15px 19px 19px}.project-info strong{font-size:15px;letter-spacing:-.02em}.project-info span{font-size:11px;line-height:1.5}.project-arrow{width:34px;height:34px;display:grid;place-items:center;border:1px solid #ffffff20;border-radius:50%;font-size:18px;transition:background .2s,color .2s,transform .2s}.project:hover .project-arrow{background:var(--green);color:#10130e;transform:rotate(45deg)}.app-dialog{width:min(1000px,calc(100% - 28px));max-height:90vh;padding:0;border:1px solid #ffffff22;border-radius:22px;background:#0c0e0c;color:var(--text);overflow:auto;box-shadow:0 30px 100px #000b}.app-dialog::backdrop{background:#020302c9;backdrop-filter:blur(8px)}.app-shell{position:relative;min-height:560px;padding:34px}.app-close{position:sticky;z-index:5;top:14px;float:right;width:40px;height:40px;border:1px solid #ffffff35;border-radius:50%;background:#101310;color:white;font-size:24px;cursor:pointer}.miniapp{min-height:490px}.mini-nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:4px 58px 24px 0;border-bottom:1px solid #ffffff20;font-size:12px}.mini-nav strong{letter-spacing:.1em}.mini-nav-links{display:flex;gap:22px;color:#bdc3b8}.nova-hero{padding:70px 0 56px;max-width:760px}.nova-kicker,.flow-kicker{font:10px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--green)}.nova-hero h2{font-size:clamp(38px,7vw,74px);line-height:.98;letter-spacing:-.07em;margin:17px 0}.nova-hero h2 em{font-style:normal;color:var(--green)}.nova-hero p{max-width:470px;color:#aeb4a9;line-height:1.65}.mini-primary{margin-top:18px;padding:13px 19px;border:0;border-radius:30px;background:var(--green);color:#0b1008;font-weight:800;cursor:pointer}.nova-services{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.nova-service{padding:18px;border:1px solid #ffffff1c;border-radius:14px;background:#ffffff05}.nova-service b{display:block;margin-bottom:8px}.nova-service span{font-size:12px;line-height:1.5;color:#aeb4a9}.nova-contact{display:none;margin-top:18px;padding:14px;border:1px solid #8df34d66;border-radius:12px;color:#dfe7d8}.nova-contact.is-open{display:block}.flow-app{max-width:760px;margin:0 auto;padding:14px 0}.flow-header{display:flex;justify-content:space-between;align-items:center;gap:15px;margin:18px 0 26px}.flow-header h2{font-size:36px;letter-spacing:-.06em;margin:7px 0}.flow-count{padding:10px 14px;border:1px solid #ffffff20;border-radius:12px;color:#bdc3b8;font-size:12px}.flow-board{padding:20px;border:1px solid #ffffff1d;border-radius:18px;background:linear-gradient(145deg,#141720,#0c0e13)}.flow-task{display:flex;align-items:center;gap:12px;padding:14px 4px;border-bottom:1px solid #ffffff13;color:#e6e8ee}.flow-task:last-child{border-bottom:0}.flow-task input{accent-color:#8df34d;width:17px;height:17px}.flow-task.is-done span{text-decoration:line-through;color:#7f8790}.flow-add{margin-top:18px;padding:11px 16px;border:1px solid #8df34d77;border-radius:25px;background:transparent;color:var(--green);font-weight:700;cursor:pointer}.flow-hint{margin:14px 0 0;color:#8e958b;font-size:11px}@media(max-width:600px){.app-shell{padding:22px 17px;min-height:500px}.mini-nav{align-items:flex-start;flex-direction:column}.mini-nav-links{gap:14px}.nova-hero{padding:48px 0 38px}.nova-services{grid-template-columns:1fr}.flow-header{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+#cursorRingField{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.92}body::before{content:"";position:fixed;inset:34% -25% -18%;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(141,243,77,.22) 1px,transparent 1px),linear-gradient(90deg,rgba(141,243,77,.22) 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(to bottom,transparent 0%,#000 32%,#000 100%);transform:perspective(480px) rotateX(54deg) scale(1.25);transform-origin:center bottom;animation:grid-drift 9s linear infinite}main,.footer{position:relative;z-index:1}.topbar{z-index:4}.hero-visual{z-index:1;pointer-events:auto}.particle-sphere{cursor:crosshair;touch-action:none}@keyframes grid-drift{to{background-position:0 54px,54px 0}}
+@media(prefers-reduced-motion:reduce){#cursorRingField{opacity:.72}body::before{animation:none}}body::before{display:none}.planet-core{position:absolute;inset:15%;border-radius:50%;z-index:0;background:radial-gradient(circle at 32% 28%,#d8e2ff 0%,#7189ff 4%,#3653b6 18%,#182249 48%,#090c19 72%,#03040a 100%);box-shadow:inset -24px -18px 38px #010208cc,inset 7px 5px 20px #9ab1ff55,0 0 50px #3074f944,0 0 120px #3074f91c}.particle-sphere canvas{position:relative;z-index:1}
+</style>
+</head>
+<body>
+<canvas id="cursorRingField" aria-hidden="true"></canvas>
+<header class="container topbar" id="top">
+<a class="brand" href="#top" aria-label="Uglyxcy — главная"><i class="spark" aria-hidden="true"></i>Uglyxcy</a>
+<nav class="nav" aria-label="Главная навигация"><a href="#about">Обо мне</a><a href="#reviews">Отзывы</a><a href="#contact">Контакты</a></nav>
+<a class="telegram" href="https://t.me/Uglyxcy" target="_blank" rel="noopener noreferrer">➤ &nbsp; @Uglyxcy</a>
+</header>
+<main>
+<section class="container hero" aria-labelledby="hero-title">
+<div class="hero-glow" aria-hidden="true"></div>
+<div class="hero-visual" aria-hidden="true"><div class="particle-sphere" id="particleSphere"><span class="planet-core"></span></div><span class="hero-note">PARTICLE FIELD / 01</span></div>
+<div class="hero-copy">
+<span class="pill">Vibe Developer</span>
+<h1 id="hero-title">Создаю сайты,<br>которые <span>живут.</span></h1>
+<p class="hero-sub">Современный веб-дизайн, чистый код и внимание к деталям.</p>
+<div class="hero-actions"><a class="btn" href="#contact">Обсудить проект <span aria-hidden="true">→</span></a><a class="quiet-link" href="#about">Обо мне ↓</a></div>
+</div>
+</section>
+<div class="container trust" aria-label="Ключевые показатели">
+<div class="trust-intro"><strong>Доверие</strong><span>которое говорит само за себя</span></div>
+<div class="metric"><strong>10+</strong><span>реализованных<br>проектов</span></div>
+<div class="metric"><strong>98%</strong><span>довольных<br>клиентов</span></div>
+<div class="metric"><strong>24/7</strong><span>на связи</span></div>
+<div class="social-proof"><div class="avatars" aria-hidden="true"><i class="avatar"></i><i class="avatar"></i><i class="avatar"></i><i class="avatar"></i></div>Нам доверяют<br>по всему миру</div>
+</div>
+<section class="container about-process reveal" id="about">
+<div class="about"><span class="section-tag">◉ Обо мне</span><h2>Кто я такой?</h2><p>Привет! Я — Uglyxcy, веб-разработчик и дизайнер. Создаю современные и удобные решения, которые помогают людям и бизнесу расти.</p><span class="signature" aria-label="Подпись Uglyxcy">Uglyxcy</span></div>
+<div class="process-area" id="process"><span class="section-tag">◉ Как это работает</span><h3>Простой процесс<br>от идеи до результата</h3><div class="steps">
+<div class="step"><small>01</small><div class="step-icon" aria-hidden="true">☏</div><b>Обсуждаем<br>идею</b></div><div class="step-arrow" aria-hidden="true">→</div>
+<div class="step"><small>02</small><div class="step-icon" aria-hidden="true">〈/〉</div><b>Разрабатываем<br>проект</b></div><div class="step-arrow" aria-hidden="true">→</div>
+<div class="step"><small>03</small><div class="step-icon" aria-hidden="true">↗</div><b>Запускаем<br>и улучшаем</b></div>
+</div></div>
+</section>
+<section class="container section" id="reviews">
+<div class="reviews reveal"><div><span class="section-tag">◉ Отзывы</span><h2>Что говорят<br>мои клиенты</h2></div><div class="review-card"><div class="quote" aria-hidden="true">“</div><blockquote>Работа над проектом начинается с понимания задачи. В результате получается не просто красивая страница, а цельный и понятный продукт.</blockquote><div class="review-author">Принцип работы Uglyxcy</div><div class="review-note">Демонстрационный текст о подходе, не выданный за отзыв реального клиента.</div></div></div>
+</section>
+<section class="container" id="contact" style="padding-top:28px">
+<div class="final-cta reveal"><div><h2>Готов начать свой<br>проект <span class="green">прямо сейчас?</span></h2><p>Напиши мне в Telegram — обсудим детали и приступим.</p></div><a class="btn" href="https://t.me/Uglyxcy" target="_blank" rel="noopener noreferrer">➤ &nbsp; @Uglyxcy →</a></div>
+</section>
+</main>
+<footer class="container footer"><a class="brand" href="#top"><i class="spark" aria-hidden="true"></i>Uglyxcy</a><span>© 2026. Все права защищены.</span><nav class="footlinks" aria-label="Ссылки в подвале"><a href="#contact">Контакты</a><a href="https://t.me/Uglyxcy" target="_blank" rel="noopener noreferrer">Telegram ↗</a></nav></footer>
+<script>
+/* Появление блоков при прокрутке; reduced-motion отключает эффект в CSS. */
+const revealItems = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); obs.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12 });
+  revealItems.forEach(item => observer.observe(item));
+} else {
+  revealItems.forEach(item => item.classList.add('visible'));
+}
+
+/* Particle Sphere: lightweight canvas effect. Pauses off-screen/tab-hidden and respects reduced motion. */
+(() => {
+  const canvas = document.getElementById('particleSphere');
+  if (!(canvas instanceof HTMLCanvasElement)) return;
+  const ctx = canvas.getContext('2d', { alpha: true });
+  if (!ctx) return;
+
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const coarse = window.matchMedia('(pointer: coarse)').matches;
+  const particles = [];
+  const count = window.innerWidth < 768 ? 420 : 760;
+  const sphereRadius = 0.355;
+  let width = 0, height = 0, dpr = 1, raf = 0, last = 0;
+  let rotation = 0, pointerX = 0, pointerY = 0, targetX = 0, targetY = 0;
+  let visible = true;
+
+  // Even distribution over a sphere using a golden-angle spiral.
+  for (let i = 0; i < count; i++) {
+    const y = 1 - (i / (count - 1)) * 2;
+    const radius = Math.sqrt(Math.max(0, 1 - y * y));
+    const theta = Math.PI * (3 - Math.sqrt(5)) * i;
+    particles.push({
+      x: Math.cos(theta) * radius,
+      y,
+      z: Math.sin(theta) * radius,
+      seed: (i * 0.61803398875) % 1
+    });
+  }
+
+  function resize() {
+    const rect = canvas.getBoundingClientRect();
+    width = Math.max(1, rect.width);
+    height = Math.max(1, rect.height);
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.round(width * dpr);
+    canvas.height = Math.round(height * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    draw(0);
+  }
+
+  function pointerMove(event) {
+    const rect = canvas.getBoundingClientRect();
+    targetX = ((event.clientX - rect.left) / rect.width - 0.5) * 1.1;
+    targetY = ((event.clientY - rect.top) / rect.height - 0.5) * 1.1;
+  }
+  function pointerLeave() { targetX = 0; targetY = 0; }
+
+  function draw(time) {
+    if (!ctx || !width || !height) return;
+    ctx.clearRect(0, 0, width, height);
+    const cx = width * 0.5, cy = height * 0.5;
+    const scale = Math.min(width, height) * sphereRadius;
+    const cosR = Math.cos(rotation), sinR = Math.sin(rotation);
+    const tiltX = pointerY * 0.32, tiltY = pointerX * 0.42;
+    const cosX = Math.cos(tiltX), sinX = Math.sin(tiltX);
+    const cosY = Math.cos(tiltY), sinY = Math.sin(tiltY);
+    const projected = [];
+
+    for (const p of particles) {
+      const rx = p.x * cosR - p.z * sinR;
+      const rz = p.x * sinR + p.z * cosR;
+      const ty = p.y * cosX - rz * sinX;
+      const tz = p.y * sinX + rz * cosX;
+      const tx = rx * cosY + tz * sinY;
+      const tz2 = -rx * sinY + tz * cosY;
+      const perspective = 1.18 / (1.18 - tz2 * 0.22);
+      const x = cx + tx * scale * perspective;
+      const y = cy + ty * scale * perspective;
+      const depth = (tz2 + 1) * 0.5;
+      const pulse = 0.72 + Math.sin(time * 0.0007 + p.seed * 6.28) * 0.12;
+      const alpha = (0.13 + depth * 0.78) * pulse;
+      projected.push({ x, y, z: tz2, alpha, size: 0.55 + depth * 1.25 });
+    }
+
+    // Subtle connecting filaments make the sphere read as a coherent 3D volume.
+    const linkDistance = width < 420 ? 10.5 : 12.5;
+    for (let i = 0; i < projected.length; i += 2) {
+      const a = projected[i];
+      if (a.z < -0.35) continue;
+      for (let j = i + 1; j < Math.min(i + 18, projected.length); j += 3) {
+        const b = projected[j];
+        const dx = a.x - b.x, dy = a.y - b.y;
+        const distance = Math.hypot(dx, dy);
+        if (distance < linkDistance) {
+          ctx.strokeStyle = `rgba(151,242,105,${(1 - distance / linkDistance) * Math.min(a.alpha,b.alpha) * 0.17})`;
+          ctx.lineWidth = 0.55;
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+        }
+      }
+    }
+
+    // Draw rear particles first, then the bright front hemisphere.
+    projected.sort((a, b) => a.z - b.z);
+    for (const p of projected) {
+      ctx.beginPath();
+      ctx.fillStyle = `rgba(${p.z > 0.1 ? '190,255,158' : '121,158,111'},${p.alpha})`;
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // A fine outer contour gives the particle cloud a clear spherical silhouette.
+    const gradient = ctx.createRadialGradient(cx, cy, scale * 0.68, cx, cy, scale * 1.03);
+    gradient.addColorStop(0, 'rgba(141,243,77,0)');
+    gradient.addColorStop(0.82, 'rgba(141,243,77,0.035)');
+    gradient.addColorStop(1, 'rgba(141,243,77,0)');
+    ctx.fillStyle = gradient;
+    ctx.beginPath(); ctx.arc(cx, cy, scale * 1.03, 0, Math.PI * 2); ctx.fill();
+  }
+
+  function frame(time) {
+    raf = 0;
+    if (!visible || document.hidden) return;
+    const dt = Math.min(40, time - (last || time));
+    last = time;
+    if (!reduced) {
+      const smoothing = 1 - Math.exp(-9 * dt / 1000);
+      pointerX += (targetX - pointerX) * smoothing;
+      pointerY += (targetY - pointerY) * smoothing;
+      rotation += dt * 0.00011;
+    }
+    draw(reduced ? 0 : time);
+    if (!reduced) raf = requestAnimationFrame(frame);
+  }
+
+  function start() {
+    if (reduced) { draw(0); return; }
+    if (!raf && visible && !document.hidden) raf = requestAnimationFrame(frame);
+  }
+  function stop() {
+    if (raf) cancelAnimationFrame(raf);
+    raf = 0;
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    visible = entries.some(entry => entry.isIntersecting);
+    if (visible) start(); else stop();
+  }, { threshold: 0.01 });
+  observer.observe(canvas);
+
+  const resizeObserver = new ResizeObserver(resize);
+  resizeObserver.observe(canvas);
+  if (!coarse) {
+    canvas.addEventListener('pointermove', pointerMove, { passive: true });
+    canvas.addEventListener('pointerleave', pointerLeave, { passive: true });
+  }
+  document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+  window.addEventListener('resize', resize, { passive: true });
+  resize();
+  start();
+})();
+
+/* Pixel background: staggered appearance with a gentle shimmer, reduced-motion aware. */
+(() => {
+  const canvas = document.getElementById('pixelSphere');
+  if (!(canvas instanceof HTMLCanvasElement)) return;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const colors = ['rgba(141,243,77,0.22)', 'rgba(180,255,125,0.46)', 'rgba(190,255,158,0.78)'];
+  const gap = 7;
+  let width = 0, height = 0, dpr = 1, raf = 0, pixels = [];
+
+  function resize() {
+    const rect = canvas.getBoundingClientRect();
+    width = Math.max(1, rect.width);
+    height = Math.max(1, rect.height);
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.round(width * dpr);
+    canvas.height = Math.round(height * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    pixels = [];
+    let index = 0;
+    for (let x = 0; x < width; x += gap) {
+      for (let y = 0; y < height; y += gap) {
+        const nx = (x + gap / 2 - width / 2) / (width * 0.47);
+        const ny = (y + gap / 2 - height / 2) / (height * 0.47);
+        const radius = nx * nx + ny * ny;
+        pixels.push({ x, y, radius, seed: index++ * 0.71 });
+      }
+    }
+    draw(0);
+  }
+
+  function draw(time) {
+    ctx.clearRect(0, 0, width, height);
+    for (const p of pixels) {
+      const delay = Math.min(1, p.radius) * 1400;
+      const entered = reduced ? 1 : Math.max(0, Math.min(1, (time + 900 - delay) / 900));
+      if (!entered) continue;
+      const shimmer = reduced ? 0.72 : 0.62 + 0.38 * (0.5 + 0.5 * Math.sin(time * 0.0015 + p.seed));
+      const size = 1.1 + shimmer * 1.25;
+      ctx.globalAlpha = entered * shimmer;
+      ctx.fillStyle = colors[Math.floor((p.seed * 7) % colors.length)];
+      ctx.fillRect(p.x + (gap - size) / 2, p.y + (gap - size) / 2, size, size);
+    }
+    ctx.globalAlpha = 1;
+    if (!reduced) raf = requestAnimationFrame(draw);
+  }
+
+  const observer = new ResizeObserver(resize);
+  observer.observe(canvas);
+  resize();
+  if (!reduced) raf = requestAnimationFrame(draw);
+  window.addEventListener('pagehide', () => {
+    if (raf) cancelAnimationFrame(raf);
+    observer.disconnect();
+  }, { once: true });
+})();
+</script>
+<script type="module">
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js';
+
+(() => {
+  const host = document.getElementById('particleSphere');
+  if (!host) return;
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const count = window.innerWidth < 768 ? 5000 : 10000;
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 100);
+  camera.position.z = 3.2;
+
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setClearColor(0x000000, 0);
+  host.appendChild(renderer.domElement);
+
+  const group = new THREE.Group();
+  scene.add(group);
+  const geometry = new THREE.SphereGeometry(0.012, 6, 6);
+  const material = new THREE.MeshBasicMaterial({
+    color: 0xffffff,
+    blending: THREE.AdditiveBlending,
+    transparent: true,
+    opacity: 0.92,
+    depthWrite: false
+  });
+  const particles = new THREE.InstancedMesh(geometry, material, count);
+  const dummy = new THREE.Object3D();
+  const tint = new THREE.Color();
+  const goldenAngle = Math.PI * (3 - Math.sqrt(5));
+
+  for (let i = 0; i < count; i++) {
+    const y = 1 - (i / (count - 1)) * 2;
+    const ring = Math.sqrt(1 - y * y);
+    const theta = goldenAngle * i;
+    const x = Math.cos(theta) * ring;
+    const z = Math.sin(theta) * ring;
+    dummy.position.set(x * 1.08, y * 1.08, z * 1.08);
+    const size = 0.55 + ((z + 1) * 0.5) * 0.75;
+    dummy.scale.setScalar(size);
+    dummy.updateMatrix();
+    particles.setMatrixAt(i, dummy.matrix);
+    tint.setRGB(0.48 + ((z + 1) * 0.5) * 0.28, 0.78 + ((z + 1) * 0.5) * 0.22, 0.38 + ((z + 1) * 0.5) * 0.24);
+    particles.setColorAt(i, tint);
+  }
+  particles.instanceMatrix.needsUpdate = true;
+  if (particles.instanceColor) particles.instanceColor.needsUpdate = true;
+  group.add(particles);
+
+  let frame = 0;
+  let dragging = false;
+  let lastX = 0;
+  let lastY = 0;
+  let velocityX = 0;
+  let velocityY = 0;
+  let targetX = 0;
+  let targetY = 0;
+  const resize = () => {
+    const width = Math.max(1, host.clientWidth);
+    const height = Math.max(1, host.clientHeight);
+    renderer.setSize(width, height, false);
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+  };
+  const observer = new ResizeObserver(resize);
+  observer.observe(host);
+  resize();
+
+  const onPointerDown = event => {
+    dragging = true;
+    lastX = event.clientX;
+    lastY = event.clientY;
+    host.setPointerCapture?.(event.pointerId);
+  };
+  const onPointerMove = event => {
+    if (!dragging) return;
+    const dx = event.clientX - lastX;
+    const dy = event.clientY - lastY;
+    targetY += dx * 0.006;
+    targetX = Math.max(-1.35, Math.min(1.35, targetX + dy * 0.006));
+    velocityX = dy * 0.0008;
+    velocityY = dx * 0.0008;
+    lastX = event.clientX;
+    lastY = event.clientY;
+  };
+  const onPointerUp = () => { dragging = false; };
+  host.addEventListener('pointerdown', onPointerDown);
+  host.addEventListener('pointermove', onPointerMove);
+  host.addEventListener('pointerup', onPointerUp);
+  host.addEventListener('pointercancel', onPointerUp);
+
+  const animate = () => {
+    if (!reducedMotion && !dragging) {
+      targetY += 0.0018;
+      targetX += velocityX;
+      targetY += velocityY;
+      velocityX *= 0.94;
+      velocityY *= 0.94;
+    }
+    group.rotation.x += (targetX - group.rotation.x) * 0.08;
+    group.rotation.y += (targetY - group.rotation.y) * 0.08;
+    renderer.render(scene, camera);
+    if (!reducedMotion) frame = requestAnimationFrame(animate);
+  };
+  animate();
+
+  window.addEventListener('pagehide', () => {
+    cancelAnimationFrame(frame);
+    observer.disconnect();
+    host.removeEventListener('pointerdown', onPointerDown);
+    host.removeEventListener('pointermove', onPointerMove);
+    host.removeEventListener('pointerup', onPointerUp);
+    host.removeEventListener('pointercancel', onPointerUp);
+    geometry.dispose();
+    material.dispose();
+    renderer.dispose();
+  }, { once: true });
+})();
+</script>
+<script>
+(() => {
+  const canvas = document.getElementById('cursorRingField');
+  const ctx = canvas?.getContext('2d', { alpha: true });
+  if (!canvas || !ctx) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const colors = ['#7189ff', '#3074f9', '#9ab1ff', '#d8e2ff'];
+  const points = [];
+  let width = 1;
+  let height = 1;
+  let dpr = 1;
+  let frame = 0;
+  let lastTime = 0;
+  let elapsed = 0;
+  let pointerOver = false;
+  let pointerX = 0;
+  let pointerY = 0;
+  let ringX = 0;
+  let ringY = 0;
+  let startedAt = 0;
+
+  const random = (() => {
+    let seed = 0x9e3779b9;
+    return () => {
+      seed = (seed + 0x6d2b79f5) | 0;
+      let value = seed;
+      value = Math.imul(value ^ (value >>> 15), value | 1);
+      value ^= value + Math.imul(value ^ (value >>> 7), value | 61);
+      return ((value ^ (value >>> 14)) >>> 0) / 4294967296;
+    };
+  })();
+
+  function buildField() {
+    points.length = 0;
+    const spacing = Math.max(18, Math.min(25, Math.sqrt(width * height / 1900)));
+    const cell = spacing / Math.SQRT2;
+    const cols = Math.ceil(width / cell);
+    const rows = Math.ceil(height / cell);
+    const grid = new Int32Array(cols * rows).fill(-1);
+    const active = [];
+    const add = (x, y) => {
+      const index = points.length;
+      points.push({ x, y, dx: 0, dy: 0, vx: 0, vy: 0, energy: 0, seed: random() * Math.PI * 2 });
+      grid[Math.floor(y / cell) * cols + Math.floor(x / cell)] = index;
+      active.push(index);
+    };
+    add(random() * width, random() * height);
+    const minDistance2 = spacing * spacing;
+    while (active.length && points.length < 5200) {
+      const activeSlot = Math.floor(random() * active.length);
+      const point = points[active[activeSlot]];
+      let placed = false;
+      for (let attempt = 0; attempt < 18; attempt++) {
+        const angle = random() * Math.PI * 2;
+        const distance = spacing * (1 + random());
+        const x = point.x + Math.cos(angle) * distance;
+        const y = point.y + Math.sin(angle) * distance;
+        if (x < 0 || y < 0 || x >= width || y >= height) continue;
+        const gx = Math.floor(x / cell);
+        const gy = Math.floor(y / cell);
+        let clear = true;
+        for (let yy = Math.max(0, gy - 2); yy <= Math.min(rows - 1, gy + 2) && clear; yy++) {
+          for (let xx = Math.max(0, gx - 2); xx <= Math.min(cols - 1, gx + 2); xx++) {
+            const neighborIndex = grid[yy * cols + xx];
+            if (neighborIndex < 0) continue;
+            const neighbor = points[neighborIndex];
+            const dx = neighbor.x - x;
+            const dy = neighbor.y - y;
+            if (dx * dx + dy * dy < minDistance2) { clear = false; break; }
+          }
+        }
+        if (clear) { add(x, y); placed = true; break; }
+      }
+      if (!placed) {
+        active[activeSlot] = active[active.length - 1];
+        active.pop();
+      }
+    }
+  }
+
+  function resize() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    width = Math.max(1, window.innerWidth);
+    height = Math.max(1, window.innerHeight);
+    canvas.width = Math.round(width * dpr);
+    canvas.height = Math.round(height * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    buildField();
+    ringX = width * 0.5;
+    ringY = height * 0.48;
+    if (reduceMotion) draw(performance.now());
+    else if (!frame) frame = requestAnimationFrame(draw);
+  }
+
+  const smoothstep = (edge0, edge1, value) => {
+    const t = Math.max(0, Math.min(1, (value - edge0) / (edge1 - edge0)));
+    return t * t * (3 - 2 * t);
+  };
+
+  function draw(now) {
+    if (!startedAt) startedAt = now;
+    const dt = lastTime ? Math.min((now - lastTime) / 1000, 0.05) : 1 / 60;
+    lastTime = now;
+    if (!reduceMotion) elapsed += dt;
+    ctx.clearRect(0, 0, width, height);
+
+    const wanderX = width * (0.5 + Math.sin(elapsed * 0.11) * 0.18);
+    const wanderY = height * (0.48 + Math.sin(elapsed * 0.083 + 1.4) * 0.17);
+    const targetX = pointerOver ? pointerX : wanderX;
+    const targetY = pointerOver ? pointerY : wanderY;
+    const follow = 1 - Math.pow(1 - (pointerOver ? 0.12 : 0.01), dt * 60);
+    ringX += (targetX - ringX) * follow;
+    ringY += (targetY - ringY) * follow;
+
+    const baseRadius = Math.min(width, height) * 0.105;
+    const ringRadius = baseRadius + (reduceMotion ? 0 : Math.sin(elapsed * 1.4) * baseRadius * 0.035);
+    const bandWidth = Math.max(10, Math.min(width, height) * 0.07);
+    const push = reduceMotion ? 0 : 0.16;
+
+    for (const point of points) {
+      const dx = point.x - ringX;
+      const dy = point.y - ringY;
+      const distance = Math.hypot(dx, dy);
+      const offset = Math.abs(distance - ringRadius);
+      const band = 1 - smoothstep(bandWidth * 0.42, bandWidth * 1.75, offset);
+      const hotBand = 1 - smoothstep(bandWidth * 0.12, bandWidth * 0.62, offset);
+      const inverseDistance = 1 / Math.max(distance, 0.001);
+
+      if (!reduceMotion) {
+        point.vx = point.vx * 0.8 + dx * inverseDistance * hotBand * push;
+        point.vy = point.vy * 0.8 + dy * inverseDistance * hotBand * push;
+        point.dx = point.vx * 0.25;
+        point.dy = point.vy * 0.25;
+        point.energy = point.energy * 0.5 + band * 0.28;
+      }
+
+      const shimmer = reduceMotion ? 0.12 : 0.08 + (Math.sin(elapsed * 2.2 + point.seed) + 1) * 0.035;
+      const brightness = Math.min(1, shimmer + band * 0.88 + point.energy * 0.45);
+      const x = point.x + point.dx;
+      const y = point.y + point.dy;
+      const length = 1.4 + brightness * 3.2;
+      const angle = Math.atan2(dy, dx) + Math.sin(point.seed + elapsed * 0.45) * 0.12;
+      const color = band > 0.35 ? colors[3] : colors[(point.seed * 3 | 0) % 3];
+
+      ctx.globalAlpha = 0.18 + brightness * 0.68;
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 0.8 + brightness * 1.3;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(x - Math.cos(angle) * length * 0.5, y - Math.sin(angle) * length * 0.5);
+      ctx.lineTo(x + Math.cos(angle) * length * 0.5, y + Math.sin(angle) * length * 0.5);
+      ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+    if (!reduceMotion) frame = requestAnimationFrame(draw);
+  }
+
+  const onPointerMove = event => {
+    pointerX = event.clientX;
+    pointerY = event.clientY;
+    pointerOver = true;
+    if (reduceMotion) draw(performance.now());
+  };
+  const onPointerLeave = () => { pointerOver = false; };
+  const onVisibilityChange = () => {
+    if (document.hidden && frame) { cancelAnimationFrame(frame); frame = 0; }
+    else if (!document.hidden && !reduceMotion && !frame) frame = requestAnimationFrame(draw);
+  };
+
+  window.addEventListener('resize', resize);
+  window.addEventListener('pointermove', onPointerMove, { passive: true });
+  window.addEventListener('pointerleave', onPointerLeave);
+  document.addEventListener('visibilitychange', onVisibilityChange);
+  window.addEventListener('pagehide', () => {
+    if (frame) cancelAnimationFrame(frame);
+    window.removeEventListener('resize', resize);
+    window.removeEventListener('pointermove', onPointerMove);
+    window.removeEventListener('pointerleave', onPointerLeave);
+    document.removeEventListener('visibilitychange', onVisibilityChange);
+  }, { once: true });
+  resize();
+})();
+</script>
+</body>
+</html>
